@@ -36,10 +36,10 @@ jobs:
           DOCKER_CLI_EXPERIMENTAL: enabled
           REGISTRY: docker.io
 
-      # Optional: Update Kubernetes Manifests
-      - name: Update Kubernetes Manifests
+      - name: Update Kustomize overlay with new image tag
         run: |
-          sed -i "s|djangokubernetesproject:latest|djangokubernetesproject:${{ github.sha }}|" k8s/django-deployment.yml
-          git add k8s/django-deployment.yml
-          git commit -m "Update deployment with new image version"
-          git push
+          sed -i "s/latest/${{ github.sha }}/" overlays/prod/kustomization.yaml
+          
+      - name: Apply Kubernetes manifests with Kustomize
+        run: |
+          kubectl apply -k overlays/prod

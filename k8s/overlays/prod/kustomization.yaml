@@ -1,0 +1,6 @@
+resources:
+  - ../../base
+
+images:
+  - name: santoshkr567/djangokubernetesproject
+    newTag: "latest"  # Default tag, can be dynamically updated in CI/CD pipeline
