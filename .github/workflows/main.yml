@@ -46,4 +46,4 @@ jobs:
 
           git add k8s/django-deployment.yaml
           git commit -m "Update deployment with new image version"
-          git push https://x-access-token:${{ secrets.PAT }}@github.com/$santoshkr567/djangokubernetesproject.git
+          git push https://x-access-token:${{ secrets.PAT }}@github.com/santoshkr567/djangokubernetesproject.git
