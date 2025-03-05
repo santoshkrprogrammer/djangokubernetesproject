@@ -32,8 +32,8 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t djangokubernetesproject:${{ github.sha }} .
-          docker tag my-django-app:${{ github.sha }} santoshkr567/djangokubernetesproject:${{ github.sha }}
-          docker push myusername/my-django-app:${{ github.sha }}
+          docker tag djangokubernetesproject:${{ github.sha }} santoshkr567/djangokubernetesproject:${{ github.sha }}
+          docker push santoshkr567/djangokubernetesproject:${{ github.sha }}
         env:
           DOCKER_BUILDKIT: 1
           DOCKER_CLI_EXPERIMENTAL: enabled
