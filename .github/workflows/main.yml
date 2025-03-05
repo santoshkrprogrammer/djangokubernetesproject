@@ -24,24 +24,29 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          
-
-      
+          pip install -r requirements.txt
 
       # Build Docker image
       - name: Build Docker image
         run: |
           docker build -t djangokubernetesproject:${{ github.sha }} .
           docker tag djangokubernetesproject:${{ github.sha }} santoshkr567/djangokubernetesproject:${{ github.sha }}
+          
+      # Login to Docker Hub
+      - name: Log in to Docker Hub
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      # Push Docker image
+      - name: Push Docker image
+        run: |
           docker push santoshkr567/djangokubernetesproject:${{ github.sha }}
         env:
           DOCKER_BUILDKIT: 1
           DOCKER_CLI_EXPERIMENTAL: enabled
           REGISTRY: docker.io
-          DOCKER_USERNAME: santoshkr567
-          DOCKER_PASSWORD: setting123
 
-      # Optional: Update Kubernetes manifests (if necessary)
+      # Optional: Update Kubernetes Manifests
       - name: Update Kubernetes Manifests
         run: |
           sed -i "s|djangokubernetesproject:latest|djangokubernetesproject:${{ github.sha }}|" k8s/deployment.yaml
