@@ -38,7 +38,7 @@ jobs:
 
       - name: Update Kustomize overlay with new image tag
         run: |
-          sed -i "s/latest/${{ github.sha }}/" overlays/prod/kustomization.yaml
+          sed -i "s/latest/${{ github.sha }}/" k8s/overlays/prod/kustomization.yaml
           
       - name: Apply Kubernetes manifests with Kustomize
         run: |
