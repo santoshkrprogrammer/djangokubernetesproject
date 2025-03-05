@@ -8,3 +8,7 @@ def home(request):
 
 def new(request):
     return HttpResponse("Welcome to the new page!")
+
+
+def next(request):
+    return HttpResponse("Welcome to the next page to checkout now")
