@@ -6,8 +6,10 @@ on:
       - main
 
 jobs:
-  build:
+  update-manifest:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # ✅ Allows pushing changesuntu-latest
 
     steps:
       # Checkout the repository
