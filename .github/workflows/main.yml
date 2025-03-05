@@ -39,7 +39,7 @@ jobs:
       # Optional: Update Kubernetes Manifests
       - name: Update Kubernetes Manifests
         run: |
-          sed -i "s|djangokubernetesproject:latest|djangokubernetesproject:${{ github.sha }}|" k8s/django-deployment.yaml
+          sed -i "s|djangokubernetesproject:[a-f0-9]\+|djangokubernetesproject:${{ github.sha }}|" k8s/django-deployment.yaml
 
           git config --local user.email "santoshkrm567@gmail.com"  
           git config --local user.name "santoshkr567" 
