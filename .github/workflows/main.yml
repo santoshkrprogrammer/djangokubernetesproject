@@ -39,7 +39,7 @@ jobs:
       # Optional: Update Kubernetes Manifests
       - name: Update Kubernetes Manifests
         run: |
-          sed -i "s|djangokubernetesproject:latest|djangokubernetesproject:${{ github.sha }}|" k8s/deployment.yaml
-          git add k8s/deployment.yaml
+          sed -i "s|djangokubernetesproject:latest|djangokubernetesproject:${{ github.sha }}|" k8s/django-deployment.yml
+          git add k8s/django-deployment.yml
           git commit -m "Update deployment with new image version"
           git push
