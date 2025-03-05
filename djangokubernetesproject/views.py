@@ -12,3 +12,6 @@ def new(request):
 
 def next(request):
     return HttpResponse("Welcome to the next page to checkout now")
+
+def legend(request):
+    return HttpResponse("Welcome to the legend page to checkout now")
