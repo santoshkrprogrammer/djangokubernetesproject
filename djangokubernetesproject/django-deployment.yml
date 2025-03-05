@@ -21,7 +21,6 @@ spec:
             - containerPort: 8000
               name: gunicorn
 
-
 ---
 apiVersion: v1
 kind: Service
