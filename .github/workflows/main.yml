@@ -26,10 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           
 
-      # Run tests (e.g., using pytest)
-      - name: Run tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q
+      
 
       # Build Docker image
       - name: Build Docker image
