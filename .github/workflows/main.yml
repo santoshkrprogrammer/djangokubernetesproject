@@ -42,4 +42,4 @@ jobs:
           
       - name: Apply Kubernetes manifests with Kustomize
         run: |
-          kubectl apply -k overlays/prod
+          kubectl apply -k k8s/overlays/prod
