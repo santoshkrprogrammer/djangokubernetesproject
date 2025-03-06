@@ -15,7 +15,7 @@ spec:
         app: django
     spec:
       containers:
-        - image: santoshkr567/djangokubernetesproject:45a8de57e3d0ea7b6cabd97513dd3992c1e846a6
+        - image: santoshkr567/djangokubernetesproject:a4ee7d05755c61045d19b755c417e388640cb533
           name: django
           ports:
             - containerPort: 8000
