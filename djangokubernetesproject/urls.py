@@ -22,5 +22,6 @@ urlpatterns = [
     path('home/',views.home),
     path('new/',views.new),
     path('next/',views.next),
-    path('legend/',views.legend)
+    path('legend/',views.legend),
+    path('micro/',views.micro)
 ]
