@@ -17,4 +17,4 @@ def legend(request):
     return HttpResponse("Welcome to the legend page to checkout now")
 
 def micro(request):
-    return HttpResponse("This is a micro response")
+    return HttpResponse("Hey this is a big mic")

@@ -23,5 +23,5 @@ urlpatterns = [
     path('new/',views.new),
     path('next/',views.next),
     path('legend/',views.legend),
-    path('micro/',views.micro)
+    path('mic/',views.micro)
 ]
